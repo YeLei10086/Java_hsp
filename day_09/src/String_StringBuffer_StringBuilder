@@ -1,0 +1,36 @@
+- String、StringBuffer 和 StringBuilder
+
+    1. StringBuilder 和 StringBuffer 非常类似，均代表可变的字符序列，
+    
+        而且方法也一样.
+    
+    2. String:不可变字符序列,效率低，但复用性高；
+    
+    3. StringBuffer:可变字符序列，效率较高（增删）、线程安全.
+    
+    4. StringBuilder:可变字符序列、效率最高、线程不安全.
+    
+    5. String 使用注意说明：
+       
+       ```
+       String s = "a";  //创建了一个字符
+       s += "b";        //实际上原来的"a"字符串对象已经丢弃了，
+                        //现在又产生了一个字符串s + "b"（也就是"ab"）.
+                        //如果多次执行这些改变串内容的操作，会导致大量副本字符串对象存留在内存中，效率降低；
+                        //如果这样的操作放入循环中，会极大影响程序的性能。
+                        //结论：如果我们要对String做大量修改，不要使用String.
+       
+
+        ```
+- String、StringBuffer 和 StringBuilder 的抉择
+    
+    - 使用原则,结论
+        1. 如果字符串存在大量的修改操作,一般使用StringBuffer 或 StringBuilder
+        
+        2. 如果字符串存在大量的修改操作,并在单线程的情况下，使用StringBuilder
+        
+        3. 如果字符串存在大量的修改操作,并在多线程的情况下，使用StringBuffer
+        
+        4. 如果我们的字符串很少修改,被多个对象引用，使用String
+        
+        

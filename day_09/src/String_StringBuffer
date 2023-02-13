@@ -1,0 +1,12 @@
+- String VS StringBuffer
+    1. String保存的是**字符串常量**，**里面的值不能更改**，
+    
+       每次String类的更新实际上就是更改其地址，**效率低**.
+       
+       //private final char value[];
+    
+    2. StringBuffer保存的是**字符串变量**，**里面的值可以更改**，
+       
+       每次StringBuffer的更新实际上可以更新内容,不用每次更新地址,**效率高**.
+    
+       //char[] value;     //这个放在堆中.

@@ -1,0 +1,19 @@
+# HashMap 小结
+
+1. Map接口的常用实现类: HashMap、Hashtable、Properties
+
+2. HashMap 是 Map接口 使用频率最高的实现类
+
+3. HashMap 是以 k-v对 的方式来存储数据的(HashMap$Node类型)【Entry案例】
+
+4. Key 不能重复,但是值可以重复,允许使用【键】null 和 【值】null
+
+5. 如果添加相同的key,则会覆盖原来的 key-value, 等同于修改。
+
+    （key 不会替换,但value会被替换）
+    
+6. 与 HashSet 一样,不保证映射顺序,因为底层是以 hash表 的方式来存储的
+
+    （jdk8 的 HashMap底层：数组+链表+红黑树）
+
+7. HashMap 没有实现同步,因此线程是不安全的,方法没有做同步互斥(即没有synchronized关键字)
